@@ -273,6 +273,9 @@ Conversions_generalizedTimeToMsTime(const char* gtString)
     case 'Z': /* treat time as GMT(UTC) time */
         t = timegm(&tmTime);
         break;
+    case 'z': /* treat time as GMT(UTC) time */
+        t = timegm(&tmTime);
+        break;
     case '+': /* subtract offset */
         {
             t = timegm(&tmTime);
