@@ -424,6 +424,8 @@ asn_GT2time_frac(const GeneralizedTime_t *st, int *frac_value, int *frac_digits,
 		break;
 	case 0x2B: case 0x2D:	/* +, - */
 		goto offset;
+	case 0x7A:		/* z */
+		goto utc_finish;
 	case 0x5A:		/* Z */
 		goto utc_finish;
 	default:
@@ -446,6 +448,8 @@ asn_GT2time_frac(const GeneralizedTime_t *st, int *frac_value, int *frac_digits,
 		break;
 	case 0x2B: case 0x2D:	/* +, - */
 		goto offset;
+	case 0x7A:		/* z */
+		goto utc_finish;
 	case 0x5A:		/* Z */
 		goto utc_finish;
 	default:
@@ -490,6 +494,8 @@ asn_GT2time_frac(const GeneralizedTime_t *st, int *frac_value, int *frac_digits,
 	switch(*buf) {
 	case 0x2B: case 0x2D:	/* +, - */
 		goto offset;
+	case 0x7A:		/* z */
+		goto utc_finish;
 	case 0x5A:		/* Z */
 		goto utc_finish;
 	default:
